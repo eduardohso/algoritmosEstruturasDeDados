@@ -6,22 +6,22 @@ typedef struct aluno{
     char nome[21];
     int matricula;
     float notaFinal;
-}AlunoS;
+}Aluno;
 
 int main(){
     char nomeS[21];
-    int nAlunos,i=0;
+    int nAlunos;
     float media, notas;
-    AlunoS *a;
+    Aluno *a;
 
     printf("Quantos alunos deseja cadastrar?\n");
     scanf("%d",&nAlunos);
 
-    a = (AlunoS *) malloc(nAlunos* sizeof(AlunoS));
+    a = (Aluno *) malloc(nAlunos* sizeof(Aluno));
     if(a == NULL)
         exit(1);
 
-    for(i;i < nAlunos;i++){
+    for(int i = 0;i < nAlunos;i++){
         printf("\nMatricula do aluno[%d]: ",i+1);
         scanf("%d", &a[i].matricula);
         printf("Nome do aluno[%d]: ",i+1);
@@ -32,12 +32,9 @@ int main(){
     }
 
     media = notas / nAlunos;
-    printf("A media aritmeticas das notas: %0.2f",media);
+    printf("A media aritmetica das notas: %0.2f",media);
 
     free(a);
     a=NULL;
     return 0;
-
 }
-
-
