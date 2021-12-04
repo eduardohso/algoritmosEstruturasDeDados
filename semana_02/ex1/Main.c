@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-#include "ex1BBT.c"
+#include "Biblioteca.h"
 
 int main(void){
 
@@ -13,7 +13,7 @@ int main(void){
     if(l!=NULL){
 
         do{
-            printf("Digite uma opcao:\n");
+            printf("\nDigite uma opcao:\n");
             printf("1 - Inicializar lista\n");
             printf("2 - Inserir elemento no final da lista\n");
             printf("3 - Imprimir os elementos da lista\n");
@@ -25,7 +25,7 @@ int main(void){
             {
             case 1:
                 system("cls");
-                inicializar(l);
+                inicializarLista(l);
                 break;
             case 2:
                 system("cls");
@@ -51,8 +51,11 @@ int main(void){
             }
         }while(op!=4);
     }else{
-        printf("Falha na alocação\n");
+        printf("Falha na alocacao\n");
+        exit(1);
     }
 
+    free(l);
+    l=NULL;
     return 0;
 }

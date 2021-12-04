@@ -9,7 +9,7 @@ typedef struct sLista
     char str[MAX];
 }Lista;
 
-void inicializar(Lista *ptr){
+void inicializarLista(Lista *ptr){
     ptr -> tam = 0;
 }
 
