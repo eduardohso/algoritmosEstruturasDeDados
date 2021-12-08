@@ -35,6 +35,16 @@ int lista_inserirFim(Lista *ptrL, Contato contato){
     }
     ptrL->n++;
     ptrL ->vetor[ptrL->n]=contato;
+
     return 0;
 }
 
+void imprimirLista(Lista *ptrL){
+    int i;
+
+    printf("\n->Elemento(s) na lista:");
+    for(i=0;i<= ptrL->n;i++){
+        printf("\nNome do contato: %s",ptrL->vetor->nomeContato);
+        printf("\nNumero do contato: %s",ptrL->vetor->numCelular);
+    }
+}
