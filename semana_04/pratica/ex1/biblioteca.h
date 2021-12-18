@@ -43,7 +43,6 @@ void removerInicio(No** lista){
     if(!listaVazia(*lista)){
         No* aux;
         aux=*lista;
-        
         *lista=aux->prox;
         desalocarNo(aux);
         printf("\nElemento removido com sucesso\n\n");
@@ -63,6 +62,20 @@ void exibirElementos(No* lista){
             aux=aux->prox;
         }
         printf("\n");
+    }else{
+        printf("\nA lista esta vazia\n\n");
+    }
+}
+
+void apagarNos(No** lista){
+    if(!listaVazia(*lista)){
+        No* aux;
+        aux=*lista;
+        while(aux!=NULL){
+            *lista=aux->prox;
+            desalocarNo(aux);
+            aux=*lista;
+        }
     }else{
         printf("\nA lista esta vazia\n\n");
     }

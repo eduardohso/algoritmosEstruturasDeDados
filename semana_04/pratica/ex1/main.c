@@ -36,6 +36,7 @@ int main(){
             break;
         case 4:
             printf("Saindo.");
+            apagarNos(&ptrL);
             break;
         
         default:
