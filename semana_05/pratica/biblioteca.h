@@ -66,7 +66,22 @@ NO* pesquisar(NO* lista, char elem){
             aux=aux->dir;
         }
     }else{
-        printf("\nLista vazia");
+        printf("\nA lista esta vazia");
     }
     return NULL;
+}
+
+void removerElemento(NO** lista){
+    if(!listaVazia(*lista)){
+        NO* aux;
+        aux = *lista;
+        *lista = aux->dir;
+        if(!listaVazia(*lista)){
+            (*lista)->esq=NULL;
+        }
+        desalocarNO(aux);
+        printf("\nElemento %c removido com sucesso",aux->info);
+    }else{
+        printf("\nA lista esta vazia");
+    }
 }
