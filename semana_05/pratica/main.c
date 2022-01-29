@@ -26,21 +26,24 @@ int main(){
             printf("\nDigite um caracter: ");
             scanf("%c",&elem);
             fflush(stdin);
-            inserirInicio(&ptrLista,elem);
+            inserirNoInicio(&ptrLista,elem);
             break;
         case 2:
+            printf("\nDigite o elemento a ser removido: ");
+            scanf("%c",&elem);
+            removerValor(&ptrLista,elem);
             break;
         case 3:
             exibirElementos(ptrLista);
             break;
         case 4:
             printf("Saindo.");
-            apagarNos(&ptrLista);
             break;
-        
         default:
         printf("Opcao invalida!\n");
             break;
         }
     }while(op!=4);
+
+    return 0;
 }

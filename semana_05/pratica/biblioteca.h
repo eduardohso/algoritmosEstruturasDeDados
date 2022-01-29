@@ -61,17 +61,20 @@ NO* pesquisar(NO* lista, char elem){
         NO* aux;
         aux=lista;
         while(aux!=NULL){
-            if(aux->info==elem)
+            if(aux->info==elem){
+                printf("\nElemento %c encontrado",aux->info);
                 return aux;
+            }
             aux=aux->dir;
         }
+        printf("\nElemento %c encontrado",aux->info);
     }else{
         printf("\nA lista esta vazia");
     }
     return NULL;
 }
 
-void removerElemento(NO** lista){
+void removerDoInicio(NO** lista){
     if(!listaVazia(*lista)){
         NO* aux;
         aux = *lista;
@@ -80,8 +83,27 @@ void removerElemento(NO** lista){
             (*lista)->esq=NULL;
         }
         desalocarNO(aux);
-        printf("\nElemento %c removido com sucesso",aux->info);
+        printf("\nElemento %c removido do inicio com sucesso",aux->info);
     }else{
         printf("\nA lista esta vazia");
+    }
+}
+
+void removerValor(NO** lista,char elem){
+    if(!listaVazia(*lista)){
+        NO* q;
+        if((q=pesquisar(*lista,elem))!=NULL){
+            if(*lista==q){
+                removerDoInicio(lista);
+            }else{
+                (q->esq)->dir=q->dir;
+                if(q->dir!=NULL)
+                    (q->dir)->esq=q->esq;
+                printf("\nElemento %c removido com sucesso",q->info);
+            }
+            
+        }else{
+            printf("\nA lista esta vazia.");
+        }
     }
 }
