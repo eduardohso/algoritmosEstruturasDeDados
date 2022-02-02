@@ -71,10 +71,10 @@ void exibirElementosOrdemInversa(NO* lista){
         while(aux->dir!=NULL){
             aux=aux->dir;
         }
-        printf("%0.2f ",aux->info);
-        while(aux->esq!=NULL){
-            aux=aux->esq;
+        
+        while(aux!=NULL){
             printf("%0.2f ",aux->info);
+            aux=aux->esq;
         }
         
         printf("\n");
