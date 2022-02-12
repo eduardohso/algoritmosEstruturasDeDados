@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-#include "biblioteca.h"
+#include "BBT_PilhaDinamica.h"
 
 int main(){
     
