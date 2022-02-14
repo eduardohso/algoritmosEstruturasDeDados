@@ -57,6 +57,16 @@ char retornarTopo(Pilha *ptr){
     }
 }
 
-void impressaoClasssica(){
-
+void impressaoClasssica(Pilha *ptr){
+    if(!vazia(ptr)){
+        int i;
+        printf("\n");
+        for(i=ptr->topo;i>=0;i--){
+            printf("%c ",ptr->letras[i]);
+            (ptr->topo)--;
+        }
+        printf("\n");
+    }else{
+        printf("\nA pilha esta vazia.\n");
+    }
 }
