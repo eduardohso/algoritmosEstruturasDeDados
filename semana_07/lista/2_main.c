@@ -29,7 +29,7 @@ int main(){
             printf("\nInforme o tamanho do prato (Pequeno,Medio,Grande): ");
             gets(prato.tamanho);
             fflush(stdin);
-            printf("\nInforme o tipo do prato (Porcelana,Plastico,Vidro): \n");
+            printf("\nInforme o tipo do prato (Porcelana,Plastico,Vidro): ");
             gets(prato.tipo);
             fflush(stdin);
             empilhar(&Pilha,prato);            
@@ -39,7 +39,8 @@ int main(){
             printf("\nPrato cor:\'%s\', tamanho:\'%s\' e tipo:\'%s\', foi desempilhado com sucesso.",P.cor,P.tamanho,P.tipo);
             break;
         case 3:
-            printf("O elemento do topo e: %c",retornarTopo(Pilha));
+            P = retornarTopo(Pilha);
+            printf("\nPrato do topo tem cor:\'%s\', tamanho:\'%s\' e tipo:\'%s\'.",P.cor,P.tamanho,P.tipo);
             break;
         case 4:
             impressaoClassica(Pilha);

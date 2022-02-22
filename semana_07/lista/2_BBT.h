@@ -67,11 +67,15 @@ Prato retornarTopo(NO* topo){
 }
 
 void impressaoClassica(NO *topo){
-    NO *aux;
-    while(!vazia(topo)){
-        aux = topo;
-        ("O prato tem cor: %s, tamanho: %s, do tipo: %s.\n",topo->info.cor,topo->info.tamanho,topo->info.tipo );
-        topo=aux->prox;
-        desalocarNO(aux);
+    if(!vazia(topo)){
+        NO *aux;
+        while(!vazia(topo)){
+            aux = topo;
+            ("O prato tem cor: %s, tamanho: %s, do tipo: %s.\n",topo->info.cor,topo->info.tamanho,topo->info.tipo );
+            topo=aux->prox;
+            desalocarNO(aux);
+        }
+    }else{
+        printf("A pilha esta vazia.\n");
     }
 }
