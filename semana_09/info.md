@@ -1,0 +1,1 @@
+Não teve aula pratica ou lista.
