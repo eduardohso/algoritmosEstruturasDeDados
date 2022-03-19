@@ -57,7 +57,7 @@ int inserir(NO **raiz,Funcionario elem){
                     break;
             }
         }
-    }else if(elem.salario<(*raiz)->info.salario){
+    }else if(elem.salario>(*raiz)->info.salario){
         ok=inserir(&(*raiz)->dir,elem);
         if(ok){
             switch((*raiz)->fb){
@@ -74,4 +74,18 @@ int inserir(NO **raiz,Funcionario elem){
                     break;
             }
         }
+    }else{
+        ok=0;
     }
+    return ok;
+}
+
+void em_ordem(NO* raiz){
+    if(raiz!=NULL){
+        em_ordem(raiz->esq);
+        printf("Nome: %s\n", raiz->info.nome);
+        printf("Ano de contratacao: %d\n", raiz->info.anoC);
+        printf("Salario: %1.f\n\n", raiz->info.salario);
+        em_ordem(raiz->dir);
+    }
+}
